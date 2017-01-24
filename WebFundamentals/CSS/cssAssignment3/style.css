@@ -1,3 +1,9 @@
+a{
+  color:white;
+}
+ul{
+  padding-left:15px;
+}
 .wrapper{
   width:970px;
   padding:15px;
@@ -5,5 +11,56 @@
 }
 .header{
   background:red;
-  border-radius: 20px;
+  border-radius: 10px;
+  margin-bottom:20px;
+}
+.header h1{
+  color:white;
+  margin:0;
+  padding:10px 20px;
+}
+.navigation{
+  background:green;
+  display:inline-block;
+  vertical-align: top;
+  margin-right:20px;
+  padding:15px;
+  border-radius:15px;
+}
+.navigation > ul{
+  list-style: none;
+  padding-left:0;
+}
+.navigation li{
+  color:white;
+}
+.content{
+  display:inline-block;
+  padding:20px 10px;
+  background:black;
+  width:76.9%;
+  color:white;
+  border-radius:15px;
+}
+.teal{
+  color:teal;
+  text-decoration: underline;
+}
+.blue{
+  color:blue;
+}
+.content li{
+  margin-bottom:10px;
+}
+.footer{
+  background:gray;
+  padding:5px 20px;
+  margin-top:15px;
+  border-radius:15px;
+}
+.footer p{
+  color:white;
+}
+.footer p a{
+  color:teal;
 }
