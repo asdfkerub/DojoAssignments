@@ -1,0 +1,121 @@
+*{
+  /*outline: 1px dotted red;*/
+  word-spacing: 3px;
+}
+p{
+  font-size:15px;
+}
+.wrapper{
+  width:960px;
+  padding:20px;
+  background:#dddfd4;
+}
+#logo_box{
+  padding:10px;
+  background: #3fb0ac;
+}
+#logo_box img{
+  vertical-align: middle;
+  width: 50px;
+  margin-right:10px;
+}
+#logo_box h1{
+  margin:0;
+  display:inline-block;
+}
+#logo_box ul{
+  display:inline-block;
+  text-align: right;
+  width:685px;
+}
+#logo_box li{
+  display:inline-block;
+  margin:0 10px;
+}
+#logo_box li a{
+  color:white;
+  word-spacing: 5px;
+}
+.content{
+  margin:10px 0;
+  padding:20px;
+  background:#fae596;
+}
+#what_is{
+  width:25%;
+  display:inline-block;
+  vertical-align: top;
+  padding:10px;
+  height:500px;
+}
+#what_is h1{
+  color:white;
+  margin:0;
+  font-size:20px;
+}
+#what_is p{
+  color:white;
+  padding-left:10px;
+  padding-right:10px;
+}
+.bgGreen{
+  background:#173f43;
+}
+#git_content{
+  width:65.9%;
+  display:inline-block;
+  padding:0px 25px;
+}
+.row{
+  width:100%;
+}
+.oneThird{
+  width:26.5%;
+  display:inline-block;
+  vertical-align: top;
+  padding:10px;
+  min-height:168px;
+}
+.oneThird h1 , .halfs h1 , #gitPush h1{
+  margin:0;
+  font-size:16px;
+  color:white;
+}
+.oneThird p, .halfs p, #gitPush p{
+  color: white;
+  padding: 0 20px;
+  margin-bottom:0;
+}
+#midBox{
+  margin:0 25px;
+}
+.halfs{
+  display:inline-block;
+  width:44%;
+  vertical-align: top;
+  padding:10px;
+}
+#midRow{
+  margin:35px 0;
+}
+#gitCommit{
+  margin-right:25px;
+}
+#gitPush{
+  padding:10px;
+  height:120px;
+}
+.footer{
+  padding:20px;
+  background:#3fb0ac;
+}
+.footer p{
+  color: black;
+  text-align: center;
+}
+.footer a{
+  color:#52288e;
+}
+.teal{
+  color:#55dbcb;
+}
