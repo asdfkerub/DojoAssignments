@@ -1,0 +1,36 @@
+#box{
+  width:200px;
+  height:200px;
+  background:red;
+}
+#circle{
+  width:200px;
+  height:200px;
+  background:green;
+  border-radius:50%;
+}
+#triangle{
+  width:0;
+  height:0;
+  border-bottom:240px solid blue;
+  border-right:120px solid transparent;
+  border-left:120px solid transparent;
+}
+#pacman{
+  width:200px;
+  height:200px;
+  background:pink;
+  border-radius:50%;
+  position:relative;
+}
+#pacman:before{
+  content: "";
+  width:0;
+  height:0;
+  border-right:120px solid white;
+  border-top:60px solid transparent;
+  border-bottom:60px solid transparent;
+  position:absolute;
+  right:0;
+  top:23%;
+}
