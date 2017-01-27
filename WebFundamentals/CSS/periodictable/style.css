@@ -1,0 +1,834 @@
+*{
+  /*outline:1px dotted red;*/
+  font-family: Arial;
+}
+ul{
+  color:red;
+  padding-left:0;
+}
+.wrapper{
+  width:1060px;
+  padding:10px;
+  background: #eeeeee;
+}
+.topBar ul{
+  list-style: none;
+  margin-top:0;
+}
+.topBar li{
+  display:inline-block;
+  vertical-align: top;
+  margin: 0 21.2px;
+  font-size: 12px;
+}
+#no1{
+  margin-left:0;
+}
+.leftBar{
+  display:inline-block;
+  vertical-align: top;
+}
+.leftBar ul{
+  padding:0 12px;
+  list-style: none;
+}
+.leftBar li{
+  margin:35px 0px;
+  font-size:12px;
+}
+ul li#firstLbarItem{
+  margin-top:0px;
+}
+#pTable{
+  display:inline-block;
+  width:96%;
+}
+#leftTable{
+  width:12.7%;
+  display:inline-block;
+}
+#midTable{
+  display:inline-block;
+  width:54.1%;
+}
+#rightTable{
+  display:inline-block;
+  width:32.3%;
+}
+#firstLi{
+  margin-left:0;
+}
+.box{
+    margin: 0 0 3px;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    padding: 15px 0;
+    line-height: 1;
+    border:1px solid black;
+    position:relative;
+    width:49px;
+    max-height:61px;
+}
+.bBox{
+  background:#689bff;
+}
+.rBox{
+  background:#fd9a98;
+}
+.yBox{
+    background: #fecb00;
+}
+.gBox{
+  background: #1fca21;
+}
+.box:before{
+  content: "";
+  position:absolute;
+  top:0;
+  font-size: 9px;
+  left:0;
+  right:0;
+  margin:auto;
+  font-weight: lighter;
+}
+.box:after{
+  content: "";
+  position:absolute;
+  bottom:0;
+  font-size: 9px;
+  left:0;
+  right:0;
+  margin:auto;
+  font-weight: lighter;
+}
+.tranbox{
+  height:13px;
+  vertical-align: top;
+  border:1px solid transparent;
+}
+#h{
+clear:both;
+}
+#h:before{
+  content: "1";
+}
+#h:after{
+  content: "1.008";
+}
+#Li:before{
+  content: "3";
+}
+#Li:after{
+  content: "6.94";
+}
+#Be:before{
+  content: "4";
+}
+#Be:after{
+  content: "9.0122";
+}
+#Na:before{
+  content: "11";
+}
+#Na:after{
+  content: "22.990";
+}
+#Mg:before{
+  content: "12";
+}
+#Mg:after{
+  content: "24.305";
+}
+#K:before{
+  content: "19";
+}
+#K:after{
+  content: "39.098";
+}
+#Ca:before{
+  content: "20";
+}
+#Ca:after{
+  content: "40.078";
+}
+#Rb:before{
+  content: "37"
+}
+#Rb:after{
+  content: "85.468"
+}
+#Sr:before{
+  content: "38"
+}
+#Sr:after{
+  content: "87.62"
+}
+#Cs:before{
+  content: "55"
+}
+#Cs:after{
+  content: "132.91"
+}
+#Ba:before{
+  content: "56"
+}
+#Ba:after{
+  content: "137.33"
+}
+#Fr:before{
+  content: "87"
+}
+#Fr:after{
+  content: "[223.02]"
+}
+#Ra:before{
+  content: "88"
+}
+#Ra:after{
+  content: "[226.03]"
+}
+#Sc:before{
+  content: "21"
+}
+#Sc:after{
+  content: "44.956"
+}
+#Ti:before{
+  content: "22"
+}
+#Ti:after{
+  content: "47.867"
+}
+#V:before{
+  content: "23";
+}
+#V:after{
+    content: "50.942"
+}
+#Cr:before{
+  content: "24"
+}
+#Cr:after{
+  content: "51.996"
+}
+#Mn:before{
+  content: "25"
+}
+#Mn:after{
+  content: "54.938"
+}
+#Fe:before{
+  content: "26"
+}
+#Fe:after{
+  content: "55.845"
+}
+#Co:before{
+  content: "27"
+}
+#Co:after{
+  content: "58.933"
+}
+#Ni:before{
+  content: "28"
+}
+#Ni:after{
+  content: "58.693"
+}
+#Cu:before{
+  content: "29"
+}
+#Cu:after{
+  content: "63.546"
+}
+#Zn:before{
+  content: "30"
+}
+#Zn:after{
+  content: "65.38"
+}
+#Y:before{
+  content: "39"
+}
+#Y:after{
+  content: "88.906"
+}
+#Zr:before{
+  content: "40"
+}
+#Zr:after{
+  content: "91.224"
+}
+#Nb:before{
+  content: "41"
+}
+#Nb:after{
+  content: "92.906"
+}
+#Mo:before{
+  content: "42"
+}
+#Mo:after{
+  content: "95.96"
+}
+#Tc:before{
+  content: "43"
+}
+#Tc:after{
+  content: "[97.91]"
+}
+#Ru:before{
+  content: "44"
+}
+#Ru:after{
+  content: "101.07"
+}
+#Rh:before{
+  content: "45"
+}
+#Rh:after{
+  content: "102.91"
+}
+#Pd:before{
+  content: "46"
+}
+#Pd:after{
+  content: "106.42"
+}
+#Ag:before{
+  content: "47"
+}
+#Ag:after{
+  content: "107.87"
+}
+#Cd:before{
+  content: "48"
+}
+#Cd:after{
+  content: "107.87"
+}
+#Lu:before{
+  content: "71"
+}
+#Lu:after{
+  content: "174.97"
+}
+#Hf:before{
+  content: "72"
+}
+#Hf:after{
+  content: "178.49"
+}
+#Ta:before{
+  content: "73"
+}
+#Ta:after{
+  content: "180.95"
+}
+#W:before{
+  content: "74"
+}
+#W:after{
+  content: "183.84"
+}
+#Re:before{
+  content: "75"
+}
+#Re:after{
+  content: "186.21"
+}
+#Os:before{
+  content: "76"
+}
+#Os:after{
+  content: "190.23"
+}
+#Ir:before{
+  content: "77"
+}
+#Ir:after{
+  content: "192.22"
+}
+#Pt:before{
+  content: "78"
+}
+#Pt:after{
+  content: "195.08"
+}
+#Au:before{
+  content: "79"
+}
+#Au:after{
+  content: "196.97"
+}
+#Hg:before{
+  content: "80"
+}
+#Hg:after{
+  content: "200.59"
+}
+#Lr:before{
+  content: "103"
+}
+#Lr:after{
+  content: "[262.11]"
+}
+#Rf:before{
+  content: "104"
+}
+#Rf:after{
+  content: "[265.12]"
+}
+#Db:before{
+  content: "105"
+}
+#Db:after{
+  content: "[268.13]"
+}
+#Sg:before{
+  content: "106"
+}
+#Sg:after{
+  content: "[271.13]"
+}
+#Bh:before{
+  content: "107"
+}
+#Bh:after{
+  content: "[270]"
+}
+#Hs:before{
+  content: "108"
+}
+#Hs:after{
+  content: "[277.15]"
+}
+#Mt:before{
+  content: "109"
+}
+#Mt:after{
+  content: "[276.15]"
+}
+#Ds:before{
+  content: "110"
+}
+#Ds:after{
+  content: "[281.16]"
+}
+#Rg:before{
+  content: "111"
+}
+#Rg:after{
+  content: "[280.16]"
+}
+#Cn:before{
+  content: "112"
+}
+#Cn:after{
+  content: "[285.17]"
+}
+#B:before{
+  content: "5";
+}
+#B:after{
+  content: "10.81";
+}
+#C:before{
+  content: "5"
+}
+#C:after{
+  content: "12.011"
+}
+#N:before{
+  content:"7"
+}
+#N:after{
+  content:"14.007"
+}
+#O:before{
+  content:"8"
+}
+#O:after{
+  content:"15.999"
+}
+#F:before{
+  content:"9"
+}
+#F:after{
+  content: "18.998"
+}
+#Ne:before{
+  content: "10"
+}
+#Ne:after{
+  content:"20.180"
+}
+#Al:before{
+  content: "13"
+}
+#Al:after{
+  content: "26.982"
+}
+#Si:before{
+  content:"14"
+}
+#Si:after{
+  content:"28.085"
+}
+#P:before{
+  content:"15"
+}
+#P:after{
+  content:"30.975"
+}
+#S:before{
+  content:"16"
+}
+#S:after{
+  content:"32.06"
+}
+#Cl:before{
+  content:"17"
+}
+#Cl:after{
+  content:"35.45"
+}
+#Ar:before{
+  content:"18"
+}
+#Ar:after{
+  content:"39.948"
+}
+#Ga:before{
+  content: "31"
+}
+#Ga:after{
+  content: "69.723"
+}
+#As:before{
+  content: "33"
+}
+#As:after{
+  content: "74.922"
+}
+#Se:before{
+  content: "34"
+}
+#Se:after{
+  content: "78.96"
+}
+#Br:before{
+  content: "35"
+}
+#Br:after{
+  content: "79.904"
+}
+#Kr:before{
+  content: "36"
+}
+#Kr:after{
+  content: "83.798"
+}
+#Ln:before{
+  content: "49"
+}
+#Ln:after{
+  content: "114.82"
+}
+#Sn:before{
+  content:"50"
+}
+#Sn:after{
+  content: "118.71"
+}
+#Sb:before{
+  content:"51"
+}
+#Sb:after{
+  content:"121.76"
+}
+#Te:before{
+  content:"52"
+}
+#Te:after{
+  content:"127.60"
+}
+#L:before{
+  content: "53"
+}
+#L:after{
+  content: "126.90"
+}
+#Xe:before{
+  content: "54"
+}
+#Xe:after{
+  content: "131.29"
+}
+#Tl:before{
+  content: "81"
+}
+#Tl:after{
+  content: "204.38"
+}
+#Pb:before{
+  content: "82"
+}
+#Pb:after{
+  content: "207.92"
+}
+#Bi:before{
+  content: "83"
+}
+#Bi:after{
+  content:"208.98"
+}
+#Po:before{
+  content: "84"
+}
+#Po:after{
+  content: "[208.98]"
+}
+#At:before{
+  content: "85"
+}
+#At:after{
+  content: "[209.99]"
+}
+#Rn:before{
+  content:"86"
+}
+#Rn:after{
+  content: "[222.02]"
+}
+#Uut:before{
+  content: "113"
+}
+#Uut:after{
+  content: "[284.18]"
+}
+#Fl:before{
+  content: "114"
+}
+#Fl:after{
+  content: "[289.19]"
+}
+#Uup:before{
+  content:"115"
+}
+#Uup:after{
+  content: "[288.19]"
+}
+#Lv:before{
+  content: "116"
+}
+#Lv:after{
+  content: "293"
+}
+#Uus:before{
+  content: "117"
+}
+#Uus:after{
+  content: "[294]"
+}
+#Uuo:before{
+  content: "118"
+}
+#Uuo:after{
+  content: "[294]"
+}
+.red{
+  color:red;
+}
+#bottom{
+  margin-top:15px;
+}
+#lanth{
+  margin-right: 55px;
+  font-size: 11px;
+}
+#La:before{
+  content: "57"
+}
+#La:after{
+  content: "138.91"
+}
+#Ce:before{
+  content: "58"
+}
+#Ce:after{
+  content:"140.12"
+}
+#Pr:before{
+  content:"59"
+}
+#Pr:after{
+  content: "140.91"
+}
+#Nd:before{
+  content: "60"
+}
+#Nd:after{
+  content: "144.24"
+}
+#Pm:before{
+  content: "61"
+}
+#Pm:after{
+  content: "[144.91]"
+}
+#Sm:before{
+  content: "62"
+}
+#Sm:after{
+  content: "150.36"
+}
+#Eu:before{
+  content:"63"
+}
+#Eu:after{
+  content:"151.96"
+}
+#Gd:before{
+  content:"64"
+}
+#Gd:after{
+  content: "157.25"
+}
+#Tb:before{
+  content:"65"
+}
+#Tb:after{
+  content:"158.93"
+}
+#Dy:before{
+  content:"66"
+}
+#Dy:after{
+  content:"162.50"
+}
+#Ho:before{
+  content:"67"
+}
+#Ho:after{
+  content:"164.93"
+}
+#Er:before{
+  content:"68"
+}
+#Er:after{
+  content:"167.26"
+}
+#Tm:before{
+  content:"69"
+}
+#Tm:after{
+  content:"168.93"
+}
+#Yb:before{
+  content:"70"
+}
+#Yb:after{
+  content:"173.05"
+}
+#actin{
+  margin-right: 60px;
+  font-size: 11px;
+}
+#Ac:before{
+  content: "89"
+}
+#Ac:after{
+  content: "[227.03]"
+}
+#Th:before{
+  content: "90"
+}
+#Th:after{
+  content: "232.04"
+}
+#Pa:before{
+  content: "91"
+}
+#Pa:after{
+  content: "231.04"
+}
+#U:before{
+  content: "92"
+}
+#U:after{
+  content: "238.03"
+}
+#Np:before{
+  content: "93"
+}
+#Np:after{
+  content: "[237.05]"
+}
+#Pu:before{
+  content: "94"
+}
+#Pu:after{
+  content: "[244.06]"
+}
+#Am:before{
+  content: "95"
+}
+#Am:after{
+  content: "[243.06]"
+}
+#Cm:before{
+  content: "96"
+}
+#Cm:after{
+  content: "[247.07]"
+}
+#Bk:before{
+  content: "97"
+}
+#Bk:after{
+  content: "[247.07]"
+}
+#Cf:before{
+  content: "98"
+}
+#Cf:after{
+  content: "[251.08]"
+}
+#Es:before{
+  content: "99"
+}
+#Es:after{
+  content: "[252.08]"
+}
+#Fm:before{
+  content: "100"
+}
+#Fm:after{
+  content:"[257.10]"
+}
+#Md:before{
+  content: "101"
+}
+#Md:after{
+  content:"258.10"
+}
+#No:before{
+  content:"102"
+}
+#No:after{
+  content:"[259.10]"
+}
+#Ge:before{
+  content:"32"
+}
+#Ge:after{
+  content:"72.63"
+}
+#I:before{
+  content:"53"
+}
+#I:after{
+  content:"126.90"
+}
