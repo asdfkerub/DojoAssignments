@@ -1,35 +1,33 @@
 function bday(cmonth,cday,bmonth,day){
-  var mleft = bmonth - cmonth;
-  var daysleft = 0;
-  //calculates days total with in months
-  for(var i = 1; i <= mleft;i++){
+  var dleft = 0;
+  if(bmonth === 2 || bmonth > 2){
+    dleft-= 2;
+  }
+  for(var i = cmonth; i < bmonth; i++){
     if(i % 2 === 1){
-      daysleft+=31;
+      dleft+= 31;
     }else{
-      daysleft+=30;
+      dleft+= 30;
     }
   }
-  //minus current date
-  daysleft-= cday;
-  //minus birth date
-  daysleft+= day;
-  //minus february
-  if(cmonth <= 2){
-    daysleft-= 2;
+  dleft-= cday;
+  dleft+= day;
+  if(dleft < 0){
+    dleft+= 365;
   }
-  //console log messages
-  for(var x = daysleft; x >= 0; x--){
-    if(x >= 30){
-      console.log(x + " until my bday :/");
-    }else if(x <= 30 && x > 5){
-      console.log("There is only " + x + " left until my bday!");
-    }else if(x <= 5 && x !== 0){
-      console.log("Almost my FUCKING BIRTHDAY! " + x + " days left");
-    }else if(x === 0){
-      console.log("Happy Birthday to me!");
+  for(var ii = dleft; ii >= 0; ii--){
+   if(ii > 30){
+      console.log(ii + " until my birthday :/");
+    }else if(ii <= 30 && ii > 5){
+      console.log("Its almost my brithday! " + ii + " days left");
+    }else if(ii === 1){
+      console.log("My birthday is tomorrow");
+    }else if(ii <= 5 && ii !== 0){
+      console.log("MY FCUKING BIRTHDAY IS IN " + ii + " DAYS!");
     }else{
-      console.log("When is your birthday again?");
+      console.log("It's my birthday today!!!");
     }
   }
+
 }
-console.log(bday(1,28,5,4));
+console.log(bday(1,28,1,1));
