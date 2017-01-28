@@ -5,6 +5,10 @@ function time(hour,min,period){
   var ch = "";
   var cm = "";
   var cp = "";
+  if(hour == 4 && min == 20){
+    console.log("It's fckin Four Twenty");
+    return;
+  }
 //   HOURS
   if(hour == 12 && period == "pm"){
     console.log("Its " + hour + " noon");
@@ -19,25 +23,36 @@ function time(hour,min,period){
   }
 //   MINUTES
   if(period === "am" || period === "AM"){
-    cp = "morning";
+    cp = "in the morning";
   }else{
-    cp = "evening";
+    cp = "in the evening";
   }
   if(min == 5){
     cm = "5 after";
-  }else if(min == 30){
+    console.log("It's " + cm + " " + hour + " " + cp);
+    return;
+  }else if(min < 30){
     cm = "just after of";
     hour--;
+    console.log("It's " + cm + " " + hour + " " + cp);
+    return;
+  }else if (min == 30){
+    console.log("It's " + hour + ":" + min + " " + cp);
+    return;
   }else if(min == 15){
     cm = "quarter after";
-
+    console.log("It's " + cm + " " + hour + " " + cp);
+    return;
   }else if(min > 30){
     cm = "half past";
+    console.log("It's " + cm + " " + hour + " " + cp);
+    return;
   }else{
     cm = "almost";
     hour++;
+    console.log("It's " + cm + " " + hour + " " + cp);
+    return;
   }
-  console.log("It's " + hour + " in the " + cp);
-  console.log("It's " + cm + " " + hour + " " + cp);
+
 }
-time(4,15,"am");
+time(4,20,"am");
