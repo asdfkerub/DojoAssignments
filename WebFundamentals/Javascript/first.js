@@ -1,0 +1,20 @@
+var num1 = 600;
+var num2 = 2;
+var num3 = -300;
+var num4 = 999;
+var string1 = "Coding";
+var string2 = "Dojo";
+var string3 = "CodingDojo";
+var bool1 = true;
+var bool2 = false;
+var undef = 
+console.log("Number One is " + num1);
+console.log("Number Two is " + num2);
+console.log("Number Three is " + num3);
+console.log("Number Four is " + num4);
+console.log("The string says " + string1);
+console.log("The second string says " + string2);
+console.log("The third string says " + string3);
+console.log("Boolean One is " + bool1);
+console.log("Boolean Two is " + bool2);
+console.log(undef);
