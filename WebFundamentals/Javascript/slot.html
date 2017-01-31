@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slot Machine</title>
+  </head>
+  <body>
+    <script>
+      function slot(coin, goal){
+        var trys = 0;
+        var coins = coin;
+        var goals = goal;
+        var jackpot = 0;
+        if(goal !== undefined){
+          while(coins < goals || coins >= 0){
+            if(coins >= goals || coins <= 0){
+              console.log("Total Coins: " + coins + ". " + trys + " trys." + " Got " + jackpot + " jackpots.");
+              break;
+            }
+            coins--;
+            var luckynum = Math.floor(Math.random() * 100 + 1);
+            console.log("luckynum: " + luckynum + ". Coins left: " + coins);
+            if(luckynum === 1){
+              var won = Math.floor(Math.random() * 100 + 50);
+              coins+= won;
+              jackpot++;
+            }
+            trys++;
+            // console.log("Coins left: " + coins);
+          }
+        }else{
+          for(var i = coins; i >= 0;i--){
+            var luckynum = Math.floor(Math.random() * 100 + 1);
+            console.log("Lucky Number: " + luckynum);
+            if(luckynum === 1){
+              coins += Math.floor(Math.random() * 100 + 50);
+            }
+            coins--;
+          }
+          console.log("You have: " + coins + " coins.");
+        }
+      }
+    </script>
+  </body>
+</html>
