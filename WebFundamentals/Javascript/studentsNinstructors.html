@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Students And Instructors</title>
+    <meta name="description" content="Students and Instructors Assignment">
+  </head>
+  <body>
+    <script>
+    //PART ONE
+    var students = [
+     {first_name:  'Michael', last_name : 'Jordan'},
+     {first_name : 'John', last_name : 'Rosales'},
+     {first_name : 'Mark', last_name : 'Guillen'},
+     {first_name : 'KB', last_name : 'Tonel'}
+    ]
+    for(var i = 0; i < students.length; i++){
+      console.log(students[i].first_name + " " + students[i].last_name);
+    }
+
+    //PART TWO
+    console.log("======== Part Two ========");
+    var users = {
+      'Students': [
+     {first_name:  'Michael', last_name : 'Jordan'},
+     {first_name : 'John', last_name : 'Rosales'},
+     {first_name : 'Mark', last_name : 'Guillen'},
+     {first_name : 'KB', last_name : 'Tonel'}
+      ],
+      'Instructors': [
+     {first_name : 'Michael', last_name : 'Choi'},
+     {first_name : 'Martin', last_name : 'Puryear'}
+      ]
+    }
+    for(var key in users){
+      // var x = 1;
+      console.log(key);
+      for(var ii = 0; ii < users[key].length; ii++){
+        console.log( ii+1 + " - " + users[key][ii].first_name.toUpperCase()+ " " + users[key][ii].last_name.toUpperCase() + " - " + (users[key][ii].first_name.length+users[key][ii].last_name.length));
+      }
+    }
+    </script>
+  </body>
+</html>
