@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jquery Assignment One</title>
+    <meta name="description" content="An assignment">
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <style>
+    *{
+      font-family: Arial;
+    }
+    #wrapper{
+      width:100%;
+      height:100%;
+    }
+    .row{
+      width:100%;
+    }
+    .content{
+      width:100%;
+      padding:100px 0;
+      border-bottom:1px solid black;
+      text-align: center;
+    }
+    .content:hover{
+      cursor: pointer;
+      border-color:red;
+    }
+    .content h1{
+      text-transform: uppercase;
+    }
+    .content p{
+      text-transform: capitalize;
+    }
+    .blue{
+      color:blue;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#show p').css('display','none');
+      $('#slideDown p').css('display','none');
+      $('#fadeIn p').css('display' , 'none');
+
+      $('#click').click(function(){
+        $(this).find('p').css('color','red');
+      });
+      $('#hide').click(function(){
+        $(this).find('p').hide();
+      })
+      $('#show').click(function(){
+        $(this).find('p').show();
+      })
+      $('#toggle').click(function(){
+        $(this).toggle();
+      });
+      $('#slideDown').click(function(){
+        $(this).find('p').slideDown();
+      });
+      $('#slideUp').click(function(){
+        $(this).find('p').slideUp();
+      });
+      $('#slideToggle').click(function(){
+        $(this).find('p').slideToggle("slow");
+      })
+      $('#fadeIn').click(function(){
+        $(this).find('p').fadeIn();
+      })
+      $('#fadeOut').click(function(){
+        $(this).find('p').fadeOut();
+      })
+      $('#addClass').click(function(){
+        $(this).find('p').addClass('blue');
+      })
+      $('#before').click(function(){
+        $(this).find('p').before('Before');
+      })
+      $('#after').click(function(){
+        $(this).find('p').after('after');
+      })
+      $('#append').click(function(){
+        $(this).find('p').append(' Appended');
+      })
+      $('#html').click(function(){
+        $(this).find('p').html('<h1>Changed by html</h1>');
+      })
+      $('#attr').click(function(){
+        $(this).find('p').attr('Coding','dojo');
+      })
+      $('#val #check').click(function(){
+        var x = $('#val select').val();
+        alert(x);
+      })
+      $('#text').click(function(){
+        $('#text p').text('Changed');
+      })
+      $('#data').data("test" , {first : "DataOne" , second : "DataTwo"})
+      $('#data').click(function(){
+        $('#data p span:first').text( $('#data').data("test").first);
+        $('#data p span:last').text( $('#data').data("test").second);
+      });
+    });
+  </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="row">
+        <div class="content" id="click">
+          <h1>Click</h1>
+          <p>Make me red</p>
+        </div>
+        <div class="content" id="hide">
+          <h1>Hide</h1>
+          <p>Hide Me</p>
+        </div>
+        <div class="content" id="show">
+          <h1>Show</h1>
+          <p>Show Me</p>
+        </div>
+        <div class="content" id="toggle">
+          <h1>toggle</h1>
+          <p>Toggle Me</p>
+        </div>
+        <div class="content" id="slideDown">
+          <h1>slide down</h1>
+          <p>Slide Me Down</p>
+        </div>
+        <div class="content" id="slideUp">
+          <h1>slide up</h1>
+          <p>Slide Me Up</p>
+        </div>
+        <div class="content" id="slideToggle">
+          <h1>slide toggle</h1>
+          <p>Slide Me</p>
+        </div>
+        <div class="content" id="fadeIn">
+          <h1>fade in</h1>
+          <p>fade me in</p>
+        </div>
+        <div class="content" id="fadeOut">
+          <h1>fade out</h1>
+          <p>fade me out</p>
+        </div>
+        <div class="content" id="addClass">
+          <h1>add class</h1>
+          <p>I should be blue</p>
+        </div>
+        <div class="content" id="before">
+          <h1>Before</h1>
+          <p>One</p>
+          <p>Two</p>
+          <p>Three</p>
+        </div>
+        <div class="content" id="after">
+          <h1>after</h1>
+          <p>One</p>
+          <p>Two</p>
+          <p>Three</p>
+        </div>
+        <div class="content" id="append">
+          <h1>append</h1>
+          <p>What</p>
+        </div>
+        <div class="content" id="html">
+          <h1>html</h1>
+          <p>html?</p>
+        </div>
+        <div class="content" id="attr">
+          <h1>attr</h1>
+          <p>Inspect me</p>
+        </div>
+        <div class="content" id="val">
+          <h1>Val</h1>
+          <select>
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+          </select>
+          <button id="check">Check the value</button>
+        </div>
+        <div class="content" id="text">
+          <h1>text</h1>
+          <p>Change Me</p>
+        </div>
+        <div class="content" id="data">
+          <h1>text</h1>
+          <p>Data stored are <span></span> and <span></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
