@@ -35,8 +35,11 @@
     .content p{
       text-transform: capitalize;
     }
-    .blue{
-      color:blue;
+    .white{
+      color:white;
+    }
+    .bgBlack{
+      background:black;
     }
   </style>
   <script>
@@ -73,7 +76,9 @@
         $(this).find('p').fadeOut();
       })
       $('#addClass').click(function(){
-        $(this).find('p').addClass('blue');
+        $(this).addClass('bgBlack');
+        $(this).find('p').addClass('white');
+        $(this).find('h1').addClass('white');
       })
       $('#before').click(function(){
         $(this).find('p').before('Before');
