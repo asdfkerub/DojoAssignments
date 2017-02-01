@@ -12,16 +12,10 @@
       $(document).ready(function(){
 
         $('img').click(function(){
-          var oldpic = $(this).attr('data-og-pic');
+          var oldpic = $(this).attr('src');
           var newpic = $(this).attr('data-pic');
-          if($(this).attr('data-changed') == 'false'){
-            $(this).attr('src' , newpic);
-            $(this).attr('data-changed' , 'true');
-          }else{
-            $(this).attr('src' , oldpic);
-            $(this).attr('data-changed' , 'false');
-          }
-
+          $(this).attr('data-pic' , oldpic)
+          $(this).attr('src' , newpic);
         });
 
       });
@@ -34,9 +28,10 @@
     </style>
   </head>
   <body>
-    <img src="images/cat0.png" data-pic="images/ninja0.png" data-og-pic="images/cat0.png" data-changed="false">
-    <img src="images/cat1.png" data-pic="images/ninja1.png" data-og-pic="images/cat1.png" data-changed="false">
-    <img src="images/cat2.png" data-pic="images/ninja2.png" data-og-pic="images/cat2.png" data-changed="false">
-    <img src="images/cat3.png" data-pic="images/ninja3.png" data-og-pic="images/cat3.png" data-changed="false">
+    <img src="images/cat0.png" data-pic="images/ninja0.png">
+    <img src="images/cat1.png" data-pic="images/ninja1.png">
+    <img src="images/cat2.png" data-pic="images/ninja2.png">
+    <img src="images/cat3.png" data-pic="images/ninja3.png">
+    <img src="images/cat4.png" data-pic="images/ninja4.png">
   </body>
 </html>
