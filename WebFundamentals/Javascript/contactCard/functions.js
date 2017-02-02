@@ -6,7 +6,6 @@ $(document).on('click' , '#cardBox div .infoBtn', function(){
 $(document).on('click' , '#cardBox div .descBtn', function(){
   $(this).parent().siblings().show();
   $(this).parent().hide();
-  console.log($(this).parent().css('display'));
 });
 
 $(document).ready(function(){
