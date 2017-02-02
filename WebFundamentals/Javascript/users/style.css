@@ -1,0 +1,23 @@
+*{
+  font-family: Arial;
+  color:white;
+}
+#wrapper{
+  width:960px;
+  padding:10px;
+  background-color: black;
+}
+table{
+  width:100%;
+  text-align: center;
+}
+form{
+  width:100%;
+  margin-top:10px;
+}
+label{
+  width:100%;
+}
+input{
+  color:black;
+}
