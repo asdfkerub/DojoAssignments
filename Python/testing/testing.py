@@ -1,6 +1,6 @@
-name = "Kerub"
+name = "Kerub "
 space = " "
-lname = "Q"
+lname = "Q."
 age = 21
 print "Name is {}{}{}".format(name,space,lname);
 
@@ -11,5 +11,5 @@ pip = "Why is my pip not working?"
 
 print name + " says: "  + pip
 print name + space + lname + " says: {}".format(pip)
-print "About: {}{}{}{}".format(name,space,lname,age)
+print "About: {}{} is roughly {} years old".format(name,lname,age)
 
