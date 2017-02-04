@@ -20,4 +20,5 @@ print fruits_veggies
 salad = 3 * veggies
 print salad
 fruitsalad = 3 * fruits
+#print "Fruit Salad:" + fruitsalad
 print "Fruit Salad:", fruitsalad
