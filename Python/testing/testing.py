@@ -1,7 +1,7 @@
 name = "Kerub"
 space = " "
 lname = "Q"
-
+age = 21
 print "Name is {}{}{}".format(name,space,lname);
 
 for x in range(11):
@@ -11,5 +11,5 @@ pip = "Why is my pip not working?"
 
 print name + " says: "  + pip
 print name + space + lname + " says: {}".format(pip)
-
+print "About: {}{}{}{}".format(name,space,lname,age)
 
