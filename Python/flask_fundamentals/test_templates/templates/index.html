@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Templates</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/style.css')}}">
+    <script type="text/javascript" src="{{ url_for('static',filename='js/script.js')}}"></script>
+  </head>
+  <body>
+    <p><strong>Phrase:</strong> {{ phrase }}</p>
+    <p><strong>Times:</strong> {{ times }}</p>
+    <p>An exmple of a for loop in html</p>
+    {% for i in range(0,times)%}
+      <p>{{ phrase }}</p>
+    {% endfor %}
+    <p>An example of If statement</p>
+    {% for i in range(0,times) %}
+      {%if i % 2 == 0%}
+        <p>Even</p>
+      {%endif%}
+    {%endfor%}
+  </body>
+</html>
