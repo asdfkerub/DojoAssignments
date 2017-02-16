@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+  </head>
+  <body>
+    <!-- {{messages}} -->
+    {%for message in messages%}
+      <h4>{{message['message']}}</h3>
+        {%for comment in comments%}
+          {%if comment['messages_id'] == message['id']%}
+          <p>{{comment['comment']}}</p>
+          <p>By: {{comment['first_name']}} {{comment['last_name']}} on {{comment['created_at']}}</p>
+          {%endif%}
+        {%endfor%}
+    {%endfor%}
+    <!-- {{comments}} -->
+
+  </body>
+</html>
