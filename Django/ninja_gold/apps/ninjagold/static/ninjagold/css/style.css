@@ -1,0 +1,21 @@
+*{
+  font-family: Arial;
+}
+form{
+  width: 23%;
+  display: inline-block;
+  vertical-align: top;
+}
+#result{
+  border: 1px solid black;
+  height:300px;
+  overflow: scroll;
+  margin-top:20px;
+}
+.gain{
+  color:green;
+}
+.loss{
+  color:red;
+  font-weight:bold;
+}

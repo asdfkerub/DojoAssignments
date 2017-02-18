@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TEST APP</title>
+  </head>
+  <body>
+    <h3>BLOGS</h3>
+    {%for blog in blogs%}
+      <h4>{{blog.title}}</h4>
+      <p>{{blog.blog}}</p>
+      <p>Created At : {{blog.created_at}}</p>
+      <h1>COMMENTS</h1>
+      {%for comment in blog.comment_set.all%}
+        <p>{{comment.comment}}</p>
+      {%endfor%}
+      <h1>Write a comment</h1>
+      <form action="/comments/{{blog.id}}" method="POST">
+        {%csrf_token%}
+        <textarea name="comment"></textarea>
+        <input type="submit" name="Write a Comment">
+      </form>
+    {%endfor%}
+
+    <form action="/blog" method="POST">
+      {%csrf_token%}
+      <label>
+        Title<br>
+        <input type="text" name="title">
+      </label><br>
+      <label>
+        Content<br>
+        <textarea name="content"></textarea>
+      </label>
+      <input type="submit" name="Post">
+    </form>
+  </body>
+</html>
