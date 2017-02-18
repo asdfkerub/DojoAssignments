@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confirmation</title>
+  </head>
+  <body>
+    <h1>Delete Confirmation</h1>
+    {% for course in courses%}
+      <p>Name: {{course.name}}</p>
+      <p>Description: {{course.description}}</p>
+      <form action="/" method="GET">
+        <input type="submit" value="NO">
+      </form>
+      <form action="/remove/confirmed/{{course.id}}" method="POST">
+        {%csrf_token%}
+        <input type="submit" value="YES">
+      </form>
+    {%empty%}
+      <p>Something is broken</p>
+    {% endfor %}
+  </body>
+</html>
