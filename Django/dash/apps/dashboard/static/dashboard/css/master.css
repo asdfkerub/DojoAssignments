@@ -1,8 +1,24 @@
 *{
-  font-family: Arial
+  font-family: Arial;
+  color:white;
+}
+html{
+  background:black;
+}
+input, textarea{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid white;
+  font-size: 14px;
+  display: block;
+  margin:25px 0;
+}
+input:focus,textarea:focus{
+  outline:0;
 }
 .nav ul{
   list-style: none;
+  padding-left:0;
 }
 .nav ul li{
   display: inline-block;
@@ -22,6 +38,60 @@ textarea{
   width:100%;
 }
 .posted-message fieldset{
-  width: 98%;
+  /*width: 98%;*/
   margin:10px 0;
+  border:0;
+}
+#regiser-link{
+  font-size:12px;
+}
+.middle-me{
+  display:block;
+  width:30%;
+  margin:0 auto;
+}
+.middle-me input{
+  width:100%;
+}
+input[type='submit']{
+  border-bottom:0;
+  cursor: pointer;
+}
+table{
+  width:100%;
+  text-align:center;
+  margin:30px 0;
+}
+.container-fluid > h4{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+#add-user{
+  float:right;
+}
+.post-message p{
+  color:rgba(255,255,255,0.9);
+}
+.message-comments p{
+  color:rgba(255,255,255,0.5);
+  margin-left:10px;
+}
+.message-comments p.comments-extra{
+  color:rgba(255,255,255,0.3);
+  font-size:12px;
+}
+.post-message p.message-extra{
+  font-size:12px;
+}
+.message-comments p.comments-extra span{
+  color:white;
+  font-size:18px;
+}
+.post-message p.message-extra span{
+  color:white;
+  font-size:20px;
+}
+.message-comments{
+  margin: 30px 0;
 }

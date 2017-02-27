@@ -20,17 +20,18 @@
             <p class='{{message.tags}}'>{{message}}</p>
           {%endfor%}
         {%endif%}
-        <h3>Register</h3>
-        <form action="/register/process" method="POST">
-          {%csrf_token%}
-          <input type="text" name="email" placeholder="Email">
-          <input type="text" name="first_name" placeholder="First Name">
-          <input type="text" name="last_name" placeholder="Last Name">
-          <input type="text" name="password" placeholder="Password">
-          <input type="text" name="cpassword" placeholder="Confirm Password">
-          <input type="submit" value="Register">
-        </form>
-
+        <div class="middle-me">
+          <h3>Register</h3>
+          <form action="/register/process" method="POST">
+            {%csrf_token%}
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <input type="text" name="password" placeholder="Password">
+            <input type="text" name="cpassword" placeholder="Confirm Password">
+            <input type="submit" value="Register">
+          </form>
+        </div>
       </div>
     </div>
   </body>

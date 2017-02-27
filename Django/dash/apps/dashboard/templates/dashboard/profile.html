@@ -21,7 +21,7 @@
             <p class='{{message.tags}}'>{{message}}</p>
           {%endfor%}
         {%endif%}
-        <h4>Edit Profile</h4>
+        <h4>Edit Profile</h4><br>
         <fieldset>
           <form action="/user/edit/process" method='POST'>
             {%csrf_token%}

@@ -34,12 +34,14 @@
         </form>
         <div class="posted-message">
           {%for message in user.message_users.all%}
-            <fieldset>
-                <p>From: {{message.posted_by.first_name}} {{message.posted_by.last_name}} | Posted at: {{message.created_at}}</p>
+            <fieldset class="post-message">
+                <p class="message-extra">From: <span>{{message.posted_by.first_name}} {{message.posted_by.last_name}}</span> | Posted at: {{message.created_at}}</p>
                 <p>{{message.message}}</p>
                 {%for comment in message.message_comments.all%}
-                  <p>Comment By: {{comment.user.first_name}} {{comment.user.last_name}} | Posted At: {{comment.created_at}}</p>
-                  <p>{{comment.comment}}</p>
+                  <div class="message-comments">
+                    <p class="comments-extra">Comment By: <span>{{comment.user.first_name}} {{comment.user.last_name}}</span> | Posted At: {{comment.created_at}}</p>
+                    <p>{{comment.comment}}</p>
+                  </div>
                 {%endfor%}
                 <form action="/post/comment/{{message.id}}" method="POST">
                   {%csrf_token%}
