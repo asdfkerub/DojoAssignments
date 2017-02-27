@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Signin</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" type='text/css' href="{%static 'dashboard/css/master.css'%}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/signin">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="container-fluid">
+        {%if messages%}
+          {%for message in messages%}
+            <p class='{{message.tags}}'>{{message}}</p>
+          {%endfor%}
+        {%endif%}
+
+        <form action="/signin/process" method="POST">
+          {%csrf_token%}
+          <h3>Login In</h3>
+          <input type="text" name="email" placeholder="Email">
+          <input type="text" name="password" placeholder="Password">
+          <input type="submit" value="Login">
+        </form>
+
+        <a href='/register'>Don't have an account? register<a>
+      </div>
+    </div>
+  </body>
+</html>

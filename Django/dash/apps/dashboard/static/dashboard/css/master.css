@@ -1,0 +1,27 @@
+*{
+  font-family: Arial
+}
+.nav ul{
+  list-style: none;
+}
+.nav ul li{
+  display: inline-block;
+}
+.error{
+  color:red;
+}
+.success{
+  color:green;
+}
+fieldset{
+  width:47%;
+  display:inline-block;
+  vertical-align: top;
+}
+textarea{
+  width:100%;
+}
+.posted-message fieldset{
+  width: 98%;
+  margin:10px 0;
+}
