@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Account</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+  </head>
+  <body>
+    <h3>Welcome, {{user_info[0]['first_name']}}</h3>
+    <p>Name: {{user_info[0]['first_name']}} {{user_info[0]['last_name']}}</p>
+    <p>Email: {{user_info[0]['email']}}</p>
+  </body>
+</html>

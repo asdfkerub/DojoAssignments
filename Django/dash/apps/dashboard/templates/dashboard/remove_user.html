@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Dashboard</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" type='text/css' href="{%static 'dashboard/css/master.css'%}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav">
+        <ul>
+          <li><a href="/dashboard/admin">Dashboard</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      <div class="container-fluid">
+        {%if messages%}
+          {%for message in messages%}
+            <p class='{{message.tags}}'>{{message}}</p>
+          {%endfor%}
+        {%endif%}
+        <h4>Remove {{user.first_name}} {{user.last_name}} ?</h4>
+        <p>Are you sure you want to remove?</p>
+        <a href='/dashboard/admin'>No</a> <a href="/user/remove/{{user.id}}/confirm">Yes</a>
+      </div>
+    </div>
+  </body>
+</html>

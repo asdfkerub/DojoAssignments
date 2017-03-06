@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+  </head>
+  <body>
+    <form action="/result"  method="POST">
+      <input type="text" name="name" placeholder="name"><br>
+      <select name="location"><br>
+        <option value='default'>Choose</option>
+        <option value="la">LA</option>
+        <option value="seatle">Seatle</option>
+      </select><br>
+      <select name="language"><br>
+        <option value='default'>Choose</option>
+        <option value="python">Python</option>
+        <option value="mean">Mean</option>
+        <option value="ios">iOs</option>
+      </select><br>
+      <textarea name="desc" placeholder="Comments(optional)"></textarea><br>
+      <button>Submit</button>
+    </form>
+    {%with messages = get_flashed_messages()%}
+      {%if messages%}
+        {%for message in messages%}
+          <p>{{message}}</p>
+        {%endfor%}
+      {%endif%}
+    {%endwith%}
+  </body>
+</html>

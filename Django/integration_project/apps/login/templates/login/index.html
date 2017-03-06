@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login n Reg</title>
+  </head>
+  <body>
+    {%if messages%}
+      <ul class="messages">
+        {%for message in messages%}
+          <li {%if message.tags%} class="{{message.tags}}"{%endif%}>{{message}}</li>
+        {%endfor%}
+      </ul>
+    {%endif%}
+    <h3>Register</h3>
+    <form action="/register/process" method="POST">
+      {%csrf_token%}
+      <input type="text" name="first_name" placeholder="first name">
+      <input type="text" name="last_name" placeholder="last name">
+      <input type="text" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="password">
+      <input type="password" name="cpassword" placeholder="confirm password">
+      <input type="submit" value="register">
+    </form>
+    <h3>Login</h3>
+    <form action="/login" method="POST">
+      {%csrf_token%}
+      <input type="text" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="password">
+      <input type="submit" value="login">
+    </form>
+    <h3>USERS</h3>
+    {%for user in users%}
+      <p>{{user.email}}</p>
+    {%empty%}
+      <p>No users</p>
+    {%endfor%}
+  </body>
+</html>

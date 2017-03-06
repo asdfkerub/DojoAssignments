@@ -1,0 +1,18 @@
+*{
+  font-family: Arial;
+}
+fieldset{
+  width:45%;
+  display:inline-block;
+  vertical-align: top;
+}
+.error{
+  color:red;
+}
+.success{
+  color:green;
+}
+table{
+  width:100%;
+  text-align: center;
+}

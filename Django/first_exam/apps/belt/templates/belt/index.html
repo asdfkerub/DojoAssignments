@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" type="text/css" href="{%static 'belt/css/master.css'%}">
+  </head>
+  <body>
+    <h3>Welcome</h3>
+    {%if messages%}
+      {%for message in messages%}
+        <p class='{{message.tags}}'>{{message}}</p>
+      {%endfor%}
+    {%endif%}
+    <fieldset>
+      <h4>Register</h4>
+      <form action='/register' method="POST">
+        {%csrf_token%}
+        <p>Name: <input type='text' name='name'></p>
+        <p>Username: <input type='text' name='username'></p>
+        <p>Password: <input type='password' name='password'></p>
+        <p>* Password must be 8 characters long</p>
+        <p>Confirm Password: <input type='password' name='cpassword'></p>
+        <input type="submit" value='Register'>
+      </form>
+    </fieldset>
+    <fieldset>
+      <h4>Login</h4>
+      <form action="/login" method="POST">
+        {%csrf_token%}
+        <p>Username: <input type="text" name='username'></p>
+        <p>Password: <input type="password" name='password'></p>
+        <input type='submit' value="Login">
+      </form>
+    </fieldset>
+  </body>
+</html>
