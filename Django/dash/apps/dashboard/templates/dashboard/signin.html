@@ -20,16 +20,16 @@
             <p class='{{message.tags}}'>{{message}}</p>
           {%endfor%}
         {%endif%}
-
-        <form action="/signin/process" method="POST">
-          {%csrf_token%}
-          <h3>Login In</h3>
-          <input type="text" name="email" placeholder="Email">
-          <input type="text" name="password" placeholder="Password">
-          <input type="submit" value="Login">
-        </form>
-
-        <a href='/register'>Don't have an account? register<a>
+        <div class="middle-me">
+          <form action="/signin/process" method="POST">
+            {%csrf_token%}
+            <h3>Login In</h3>
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="password" placeholder="Password">
+            <input type="submit" value="Login">
+          </form>
+          <a href='/register' id='regiser-link'>Don't have an account? register<a>
+        </div>
       </div>
     </div>
   </body>
