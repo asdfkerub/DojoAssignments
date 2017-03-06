@@ -8,12 +8,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav">
-        <ul>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
+      {%include 'dashboard/includes/test.html'%}
       <div class="container-fluid">
         {%if messages%}
           {%for message in messages%}

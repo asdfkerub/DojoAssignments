@@ -8,13 +8,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav">
-        <ul>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href='/user/edit'>Profile</a></li>
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
+      {%include 'dashboard/includes/test.html'%}
       <div class="container-fluid">
         {%if messages%}
           {%for message in messages%}
@@ -22,7 +16,7 @@
           {%endfor%}
         {%endif%}
         <h2>{{user.first_name}} {{user.last_name}}</h2>
-        <p>Registered At: {{user.created_at}}</p>
+        <p>Registered At: {{user.created_at|date:"M d, Y"}}</p>
         <p>User ID: {{user.id}}</p>
         <p>Email Address: {{user.email}}</p>
         <p>Description: {{user.description}}</p>

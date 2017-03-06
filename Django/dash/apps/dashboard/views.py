@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from .models import User, Admin, Message, Comment
 from django.contrib import messages
+import datetime
 # Create your views here.
 def fuckitall(request):
     User.objects.all().delete()
@@ -36,11 +37,15 @@ def signin_process(request):
             if 'logged_in' not in request.session:
                 request.session['logged_in'] = 'null'
             request.session['logged_in'] = user['user_id']
+            if 'level' not in request.session:
+                request.session['level'] ='null'
             if user["admin_level"] == 3:
                 # print request.session['logged_in']
+                request.session['level'] = user['admin_level']
                 return redirect('/dashboard/admin')
             else:
                 # print request.session['logged_in']
+                request.session['level'] = user['admin_level']
                 return redirect('/dashboard')
 
 def logout(request):
@@ -109,7 +114,8 @@ def user_remove_confirm(request,user_id):
 
 def user_show(request,user_id):
     context = {
-        'user' : User.objects.get(id=user_id)
+        'user' : User.objects.get(id=user_id),
+        'curr_time' : datetime.datetime.now()
     }
     return render(request,'dashboard/user.html',context)
 

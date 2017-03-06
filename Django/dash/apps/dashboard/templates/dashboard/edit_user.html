@@ -8,12 +8,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav">
-        <ul>
-          <li><a href="/dashboard/admin">Dashboard</a></li>
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
+      {%include 'dashboard/includes/test.html'%}
       <div class="container-fluid">
         {%if messages%}
           {%for message in messages%}
@@ -21,7 +16,7 @@
           {%endfor%}
         {%endif%}
         <h4>Edit user #{{user.id}}</h4>
-        <a href='/dashboard/admin'>Return to Dashboard</a>
+        <a href='/dashboard/admin'>Return to Dashboard</a><br>
         <fieldset>
           <form action="/users/edit/process" method="POST">
             <h5>Edit Information</h5>
