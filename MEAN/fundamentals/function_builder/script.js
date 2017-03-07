@@ -22,7 +22,7 @@ console.log(stringReturnOne() , stringReturnTwo());
 console.log('^ Task Three ');
 // TASK FOUR
 function caller(item){
-  if (typeof(item) === 'function'){
+  if (typeof item === 'function'){
     item();
   }else{
     console.log('I am not a function, i am a ' , typeof(item));
@@ -33,25 +33,26 @@ console.log('^ Task Four ');
 
 // Task FIVE
 function myDoubleConsoleLog(item1,item2){
-  if(typeof(item1) === 'function' && typeof(item2) === 'function'){
-    item1();
-    item2();
-  }else{
-    console.log('Not enough functions');
+  if(typeof item1 === 'function'){
+    console.log(item1());
+  }
+  if (typeof item2 === 'function'){
+    console.log(item2());
   }
 }
-myDoubleConsoleLog(caller2,stringReturnTwo);
-console.log('^ Task Five & Six');
+myDoubleConsoleLog(stringReturnOne,stringReturnTwo);
+console.log('^ Task Five');
 
 
 
 // UNFINISHED
 function caller2(item){
   console.log('Starting');
-  if (typeof(item) === 'function'){
-    setTimeout(item() , 2000);
+  if (typeof item === 'function'){
+    setTimeout(item(stringReturnOne,stringReturnTwo) , 2000);
   }
   console.log('Ending');
   return "Interesting";
 }
-caller2(runningLogger());
+console.log(caller2(myDoubleConsoleLog));
+console.log('^ Task Six');
