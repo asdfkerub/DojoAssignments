@@ -1,0 +1,45 @@
+<!--
+
+PRE:
+install express
+install ejs
+intall body-parser
+instal express-session
+
+1) On '/' render views/index.ejs
+  - on document load
+  *  - prompt for a user to enter their name
+  *  - save prompt in a variable
+
+2) After entering name
+  - client emit to the server
+  *  - make a counter var that increment by 1 everytime someone joins
+  *  - save user as an object to a list that holds all the current connected users
+  *    - name , counter
+  - server emits to the client
+    - save name and counter to a session
+    - Broadcast to other clients that a user has joined the chatroom
+    - Full broadcast emit of all the users connected messages
+
+3) Every time someone sends a message
+  - Client sends an emit to the server
+    - jquery to save the message in a variable
+    - after saving message, jquery to empty the value of the input
+    - have the form return false, to prevent going to a different page
+      when form is submitted
+    - Emit holds the message and some sort name to who sent the message
+  - Server to client
+    - Full broadcast emit of the message and the user that sent it
+
+4) Jquery to append the message to a div with all the messages
+
+5) When someone disconnects
+  - On the server side make a socket that listen to disconnect
+  - Client sends a single emit to the server with (name , count);
+  - Server side
+    - loop through the list
+      - look for the object that has the count same as what the client emitted
+    - send a Broadcast emit that a user has disconnected
+
+
+-->

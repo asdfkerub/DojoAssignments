@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // this triggers the connection event in our server!
+        var socket = io.connect();
+        // we'll write all the socket stuff after the above line!
+
+        //Single Emit
+        $('#emit').click(function(){
+          socket.emit('button_clicked-this-needs-to-match',{reason:"because i wanted to learn more about sockets!"});
+        });
+        socket.on('server_response-this-needs-to-match',function(data){
+          console.log('The server says: ' + data.response);
+        });
+        //Broadcast Emit
+        $('#brod').click(function(){
+          socket.emit('test_broadcast',{reason:'im testing the broadcast'});
+        });
+        socket.on('broadcast_response',function(data){
+          console.log('The server said for broadcast: ' + data.response);
+        })
+        //Full Broadcast Emit
+        $('#fbrod').click(function(){
+          socket.emit('full_broadcast_test',{reason:'the test for full broadcast'});
+        });
+        socket.on('full_broadcast_res',function(data){
+          console.log('The full broadcast response is: ' + data.response);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>YOOO</h1>
+    <button id='emit'>I AM A BUTTON!</button>
+    <button id='brod'>I AM A BUTTON!</button>
+    <button id='fbrod'>I AM A BUTTON!</button>
+  </body>
+</html>

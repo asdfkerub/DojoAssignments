@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function(){
+        var socket = io.connect();
+        $('#survey_form').submit(function(){
+          socket.emit('posting_form',{
+            name:$('#name').val(),
+            locationg:$('#location').val(),
+            lang : $('#lang').val(),
+            comment : $('#comment').val()
+          });
+          return false;
+        });
+        socket.on('updated_mssg',function(data){
+          $('#mssg').html('You emitted the following to the server : ' + JSON.stringify(data.response));
+        });
+        socket.on('random_number',function(data){
+          $('#num').html('Your lucky number is ' + data.response);
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Survey</h1>
+    <div id="mssg"></div>
+    <div id="num"></div>
+    <form action="" id="survey_form">
+      Name: <input type="text" id="name"><br>
+      Location:
+      <select id="location">
+        <option>Burbank</option>
+        <option>Los Angeles</option>
+        <option>Orange County</option>
+      </select><br>
+      Favorite Language:
+      <select id="lang">
+        <option>MEAN</option>
+        <option>Python</option>
+        <option>IOS</option>
+      </select><br>
+      Comment:<textarea id="comment"></textarea>
+      <input type="submit">
+    </form>
+  </body>
+</html>

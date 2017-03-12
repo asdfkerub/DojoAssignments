@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form Revisted</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <script type=text/javascript>
+      $(document).ready(function(){
+        var socket = io.connect();
+        $('form').submit(function(){
+          var info = {
+            name : $('#name').val(),
+            location : $('#location').val(),
+            lang : $('#lang').val(),
+            comment : $('#comment').val()
+          }
+          socket.emit('user_info',{user_info:info});
+          return false;
+        });
+        socket.on('user_response',function(data){
+          var the_data = data.response;
+          var sered = JSON.stringify(the_data);
+          // var sered = $(the_data).serialize();
+          $('#result').html('You requested ' + sered + "<br> Your lucky number is " + data.num);
+          // console.log('server:' + sered);
+
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div id="result"></div>
+    <form action="/" method="POST">
+      Name: <input type="text" id="name"><br>
+      Location:
+      <select id="location">
+        <option>Burbank</option>
+        <option>Los Angeles</option>
+        <option>Orange County</option>
+      </select><br>
+      Favorite Language:
+      <select id="lang">
+        <option>MEAN</option>
+        <option>Python</option>
+        <option>IOS</option>
+      </select><br>
+      Comment:<textarea id="comment"></textarea>
+      <input type="submit">
+    </form>
+  </body>
+</html>

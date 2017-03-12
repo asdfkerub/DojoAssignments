@@ -1,0 +1,65 @@
+*{
+  font-family: sans-serif;
+  color:white;
+}
+html,body{
+  width: 100%;
+  height:100%;
+  background:black;
+  position:relative;
+}
+.wrapper{
+  position: fixed;
+  width: 50%;
+  left: 0;
+  right: 0;
+  bottom: 15%;
+  margin: auto;
+  height: 75%;
+}
+input{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid white;
+}
+div{
+  margin:25px 0;
+}
+.joined{
+  color:green;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: right;
+}
+.sent_by{
+  font-size:12px;
+  margin:0;
+  color: rgba(255,255,255,0.6);
+}
+.d_mssg{
+  color:red;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 300;
+}
+.a_mssg{
+  text-align: center;
+  font-size:20px;
+}
+#message_form{
+  width:100%;
+}
+#the_message{
+  width:100%;
+  padding:10px 0;
+}
+#the_message:focus{
+  outline:0;
+}
+#message_form input[type='submit']{
+  border-bottom:0;
+}
+#messages{
+  overflow: scroll;
+    height: 310px;
+}

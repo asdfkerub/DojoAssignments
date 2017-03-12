@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat Room</title>
+    <link rel="stylesheet" type="text/css" href='/stylesheets/master.css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function(){
+        var socket = io.connect();
+        var random = (Math.floor(Math.random() * 99999) + 1);
+        var user_name = prompt('Who is this name?');
+        socket.emit('new_user',{user:user_name,unique_id:random});
+        socket.on('added_user',function(data){
+          $('#messages').prepend('<div class="joined">' + data.user_info.name + ' joined the chat room</div>');
+          // socket to get initialize a user id
+        });
+        // Sending a message
+        $('#message_form').submit(function(){
+          var mssg = $('#the_message').val();
+          $('#the_message').val('');
+          socket.emit('sent_message',{message:mssg,user_name});
+          return false;
+        });
+        socket.on('received_message',function(data){
+          $('#messages').prepend('<div class="a_mssg">' + data.message_info.message + '<div class="sent_by"> - ' + data.message_info.user_name + '</div></div>');
+        });
+        //socket for all messages
+        socket.on('all_messages',function(data){
+          for(mssg in data.all_messages){
+            $('#messages').prepend('<div class="a_mssg">' + data.all_messages[mssg].message + '<div class="sent_by"> - ' + data.all_messages[mssg].user_name + '</div></div>')
+          }
+        });
+        // disconnect message
+        socket.on('someone_disc',function(data){
+          $('#messages').prepend('<div class="d_mssg">' + data.disc_mssg + '</div>');
+        })
+
+
+      })
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="messages"></div>
+      <form id="message_form">
+        <input type="text" id="the_message">
+        <!-- <input type="submit" value="Send"> -->
+      </form>
+    </div>
+  </body>
+</html>

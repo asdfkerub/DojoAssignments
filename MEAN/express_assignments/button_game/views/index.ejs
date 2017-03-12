@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Button Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function(){
+        //set a connection to socket
+        var socket = io.connect();
+        $('#click_me').click(function(){
+          //send an emit when click_me is clicked
+          socket.emit('initial_click');
+        })
+          //the response from the server when the emit-initial_click is triggered
+        socket.on('send_count',function(data){
+          $('#result').html('The button has been pushed ' + data.total_count + ' time(s).');
+        })
+        $('#reset_me').click(function(){
+          socket.emit('reset_count');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id='result'></h1>
+    <button id="click_me">Click Me</button><button id='reset_me'>RESET</button>
+  </body>
+</html>
