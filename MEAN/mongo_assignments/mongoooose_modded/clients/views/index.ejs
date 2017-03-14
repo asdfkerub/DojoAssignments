@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/master.css">
+  </head>
+  <body>
+    <h1>Home Page <a href="/mongoose/new">NEW</a></h1>
+    <table>
+      <tr>
+        <td>NAME</td>
+        <td>WEIGHT</td>
+        <td>HEIGHT</td>
+        <td>ACTION</td>
+      </tr>
+      <%for(i in mongos){%>
+        <tr>
+          <td><a href="/mongooses/<%= mongos[i]._id %>"><%= mongos[i].name %></a></td>
+          <td><%= mongos[i].weight %></td>
+          <td><%= mongos[i].height %></td>
+          <td><form action='/mongoose/edit/<%= mongos[i]._id %>' method="GET"><input type="submit" value="EDIT"></form><form action="/mongoose/destory/<%= mongos[i]._id %>" method="POST"><input type="submit" value="REMOVE"></form></td>
+        </tr>
+      <%}%>
+    </table>
+  </body>
+</html>

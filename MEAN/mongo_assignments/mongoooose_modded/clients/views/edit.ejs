@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Mongoose</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/master.css">
+  </head>
+  <body>
+    <h1>EDIT MONGOOSE</h1>
+    <%for(i in mongos){%>
+    <form action="/mongoose/<%= mongos[i]._id %>" method="POST">
+      Name:<input type="text" value="<%= mongos[i].name%>" name='name'><br>
+      Weight:<input type="text" name="weight" value="<%= mongos[i].weight %>"><br>
+      Height:<input type="text" name="height" value="<%= mongos[i].height %>"><br>
+      <input type="submit" value="Edit">
+    </form>
+    <%}%>
+  </body>
+</html>

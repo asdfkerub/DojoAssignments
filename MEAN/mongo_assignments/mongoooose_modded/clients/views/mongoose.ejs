@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mongoose</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/master.css">
+  </head>
+  <body>
+    <%for(i in mongo){%>
+      <h1><%= mongo[i].name %></h1>
+      <p>Height: <%= mongo[i].height %> ft.</p>
+      <p>Weight: <%= mongo[i].weight %> lbs.</p>
+      <form action='/mongoose/edit/<%= mongo[i]._id %>' method="GET"><input type="submit" value="EDIT"></form><form action="/mongoose/destory/<%= mongo[i]._id %>" method="POST"><input type="submit" value="REMOVE"></form>
+    <%}%>
+  </body>
+</html>

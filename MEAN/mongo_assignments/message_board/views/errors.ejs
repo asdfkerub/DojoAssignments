@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Error Page</title>
+  </head>
+  <body>
+    <h1>ErrorPage</h1>
+    <%if(typeof(errors) != 'undefined'){%>
+      <%for(i in errors){%>
+        <p><%= errors[i].message %></p>
+      <%}%>
+    <%}%>
+  </body>
+</html>
