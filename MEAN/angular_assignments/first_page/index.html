@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app='divapp'>
+  <head>
+    <meta charset="utf-8">
+    <title>First Page</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src='script.js'></script>
+  </head>
+  <body>
+    <div ng-controller='divController'>
+      <p>Hi my name is <span ng-bind='myName'></span>. My favorite stack is <span ng-bind='myStack'></span> and my favorite library is <span ng-bind='myFavLib'></span></p>
+    </div>
+  </body>
+</html>

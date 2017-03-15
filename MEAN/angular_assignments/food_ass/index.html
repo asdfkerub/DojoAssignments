@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='foodApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Food</title>
+    <script src='bower_components/angular/angular.js'></script>
+    <script type='text/javascript' src='script.js'></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div ng-controller='foodController' style="width:100% !important;">
+      <div>
+        <form ng-submit='addFood()'>
+          Favorite Food: <input type='text' ng-model='newFood.name'><input type="submit" value="Add Food">
+        </form>
+        <div>Currently Typing: {{newFood.name}}</div>
+      </div>
+      <div>
+        <input type="text" placeholder="Filter...." ng-model='searchFood'>
+        Show All : <input type="checkbox" ng-model='showAll'>
+        <ul>
+          <li ng-repeat="food in foods | filter:searchFood" ng-hide='hideList' ng-show='showAll'>{{food.name}}<input type="checkbox" ng-model='hideList'></li>
+        </ul>
+      </div>
+    </div>
+    <!-- THIS DOES NOT WORK -->
+    <!-- <div ng-controller='foodController'>
+      <ul>
+        <li ng-repeat="food in foods">{{food.name}}</li>
+      </ul>
+    </div> -->
+  </body>
+</html>

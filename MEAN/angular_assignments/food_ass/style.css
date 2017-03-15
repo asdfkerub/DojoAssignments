@@ -1,0 +1,8 @@
+*{
+  font-family: Arial;
+}
+div{
+  width:48%;
+  display:inline-block;
+  vertical-align: top;
+}
