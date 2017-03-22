@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Discussion Board</title>
+    <!-- ESSESNTIALS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/master.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/angular/angular.js"></script>
+    <script type="text/javascript" src="/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
+    <!-- CONTROLLERS -->
+    <script type="text/javascript" src="assets/controllers/IndexController.js"></script>
+    <script type="text/javascript" src="assets/controllers/DashboardController.js"></script>
+    <script type="text/javascript" src="assets/controllers/PostController.js"></script>
+
+    <!-- FACTORIES -->
+    <script type="text/javascript" src="assets/factories/UserFactory.js"></script>
+    <script type="text/javascript" src="assets/factories/PostFactory.js"></script>
+    <script type="text/javascript" src="assets/factories/CommentFactory.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div ng-view="" class="container"></div>
+      </div>
+    </div>
+  </body>
+</html>

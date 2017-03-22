@@ -1,0 +1,22 @@
+<fieldset>
+  <legend>Users Controller</legend>
+  <form ng-submit='createUser()'>
+    <label>First Name <input type="text" ng-model="newUser.first_name"></label>
+    <label>Last Name <input type="text" ng-model="newUser.last_name"></label>
+    <label>Favorite Language <input type="text" ng-model="newUser.language"></label><input type="submit" value="Create User">
+  </form>
+  <table>
+    <tr>
+      <th ng-click="sortType='first_name';sortReverse = !sortReverse">First Name</th>
+      <th ng-click="sortType='last_name';sortReverse = !sortReverse">Last Name</th>
+      <th ng-click="sortType='language';sortReverse = !sortReverse">Fav Language</th>
+      <th>Actions</th>
+    </tr>
+    <tr ng-repeat="user in allUsers | orderBy:sortType:sortReverse track by $index">
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.language}}</td>
+      <td><span ng-click="delete($index)">Delete User</span></td>
+    </tr>
+  </table>
+</fieldset>

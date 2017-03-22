@@ -1,0 +1,51 @@
+<h1>Discussion Board</h1>
+<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#login">Login</button>
+<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#register">Register</button>
+<div id="login" class="collapse">
+  <h3>Login</h3>
+  <form name="login_form">
+    <!-- Error messages for login -->
+    <!-- messages continer takes in formName.$error -->
+    <div ng-messages="login_form.$error" style="color:maroon" role="alert">
+      <div ng-message="required">Please fill up empty fields</div>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="login.username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password" ng-model="login.password" required>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="loginuser(login)">Submit</button>
+  </form>
+</div>
+<div id="register" class="collapse">
+  <h3>Register</h3>
+  <form name="register">
+    <!-- Error messages for register -->
+    <!-- Error containers take in formName.$error -->
+    <div ng-messages="register.$error" role="alert">
+      <div ng-message="required">Please fill up all the fields</div>
+    </div>
+    <!-- Specific error messages for an input -->
+    <!-- Error containers take in formName.inputName.$error -->
+    <div ng-messages="register.username.$error" style="color:red" role="alert">
+      <div ng-message="minlength">Username is too short</div>
+    </div>
+    <div ng-messages="register.password.$error" style="color:red" role="alert">
+      <!-- ng-messages=['ng-nameInInput'] -->
+      <div ng-message="minlength">Password is too short</div>
+      <div ng-message="maxlength">Password is too long</div>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="newUser.username" name="username" ng-minlength="5" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" ng-model="newUser.password" name="password" ng-minlength="8" ng-maxlength="10" required>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="adduser(newUser)">Submit</button>
+  </form>
+</div>

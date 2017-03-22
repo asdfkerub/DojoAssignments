@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Products Factory</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <fieldset ng-controller='productController'>
+      <legend>Products Controller</legend>
+      <form ng-submit='addProduct()'>
+        Product Name: <input type="text" ng-model='newProd.name'><br>
+        Product Price: <input type="number" fcsa-number="{  }" ng-model='newProd.price'><input type="submit" value="Add">
+      </form>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat='product in products track by $index'>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency}}</td>
+          <td ng-click='removeProduct($index)'>Delete</td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset ng-controller='ordersController'>
+      <legend>Orders Controller</legend>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat='product in products track by $index'>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency}}</td>
+          <td>{{product.quantity}}</td>
+          <td><span ng-click='buy($index)'>BUY</span></td>
+        </tr>
+      </table>
+    </fieldset>
+  </body>
+</html>

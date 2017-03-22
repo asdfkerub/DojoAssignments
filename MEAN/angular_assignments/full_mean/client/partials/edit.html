@@ -1,0 +1,6 @@
+<form>
+  <label>First Name: <input type="text" ng-model="eddited.first_name" ng-value="friend.first_name"></label>
+  <label>Last Name: <input type="text" ng-model="eddited.last_name" ng-value="friend.last_name"></label>
+  <label>Birthday: <input type="date" ng-model="eddited.birthday" ng-value="friend.birthday"></label>
+  <button ng-click="editFriend(eddited,friend._id)">ADD</button>
+</form>

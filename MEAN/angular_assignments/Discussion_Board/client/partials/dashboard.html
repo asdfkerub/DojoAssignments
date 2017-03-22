@@ -1,0 +1,54 @@
+<h1>Welcome, {{logged_user.username}}</h1>
+<div class="col-xs-12 col-sm-3 pull-right">
+  <input type="text" class="form-control" placeholder="Search...">
+</div>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Topic</th>
+      <th>User Name</th>
+      <th>Posts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="post in posts">
+      <td>{{post.category}}</td>
+      <td><a href="#!/post/{{post._id}}">{{post.title}}</a></td>
+      <td>{{post.creator.username}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="topic" class="col-sm-1 control-label">Topic</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="topic" ng-model="newPost.title">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="message" class="col-sm-1 control-label">Description</label>
+    <div class="col-sm-11">
+      <textarea class="form-control" rows="3" id="message" ng-model="newPost.message"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category" class="col-sm-1 control-label">Category</label>
+    <div class="col-sm-11">
+      <select multiple class="form-control"  ng-model="newPost.category">
+        <option>iOs</option>
+        <option>MEAN</option>
+        <option>Python</option>
+        <option>Ruby in Rails</option>
+        <option>Random</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-default" ng-click="addpost(newPost)">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<div class="row">
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></p>
+      <ul class="dropdown-menu">
+        <li><a href="#!/dashboard">Dashboard</a></li>
+        <li><a href="/">Log Out</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading"><a href="">{{post.creator.username}}</a> posted a topic:</div>
+    <div class="panel-body">
+      <strong>{{post.title}}</strong>
+      <p>{{post.message}}</p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="message" class="col-sm-2 control-label">Post Your Answer</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" rows="3" id="message" ng-model="comment.message"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-default" ng-click="addcomment(comment)">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

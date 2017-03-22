@@ -1,0 +1,30 @@
+<div>
+  <form>
+    <input type="text" ng-model="ass.name">
+  </form>
+  <form ng-submit="assignTeam()">
+    <select ng-model="ass.player">
+      <option ng-repeat="player in players track by $index" value="{{$index}}">{{player.name}}</option>
+    </select>
+    <select ng-model="ass.team">
+      <option ng-repeat="team in teams" value="{{team.team_name}}">{{team.team_name}}</option>
+    </select>
+    <input type="submit" value="Assign Player to Team">
+  </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Team</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in players track by $index">
+          <td>{{player.name}}</td>
+          <td>{{player.team_name}}</td>
+          <td><span ng-click="clear($index)">Clear Assignment</span></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

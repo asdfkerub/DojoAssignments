@@ -1,0 +1,17 @@
+{
+  "name": "mean_belt_one",
+  "homepage": "https://github.com/asdfkerub/DojoAssignments",
+  "authors": [
+    "kerub <q.kerubkim@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
